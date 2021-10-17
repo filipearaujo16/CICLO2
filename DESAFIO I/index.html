@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+	<title>Kitanda - JS</title>
+</head>
+<script> window.onload = function (){
+	window.onload = function(){
+
+//adicionar
+    const listaProdutos = document.querySelector("#listaProdutos");
+    const cesta = document.querySelector("#cestaDoCliente");
+    const total = document.querySelector("#mostraTotalCompra");
+
+        listaProdutos.addEventListener('click', function (elemento) {
+            let li = document.createElement('li');
+            cesta.appendChild(li).setAttribute('data-preco', elemento.target.dataset.preco);
+            cesta.appendChild(li).textContent = elemento.target.innerHTML;
+            cesta.appendChild(li).setAttribute('data-codigo', elemento.target.dataset.codigo);
+    ]
+
+ let catalogo = frutas[0].fruta
+ const produtos = document.querySelector("#produtos");
+}
+
+
+
+(()=>{
+	
+	for(let frt of frutas){
+
+		const listLi = document.createElement('li');
+		 for(listaF in frt){
+			 if(listaF == 'preco'){
+				 produtos.appendChild(listLi).setAttribute('data-preco', frt[listaaF])
+			 } else{
+				 produtos.appendChild(listLi).textContent = `${frt[listaF]}`
+			 }
+		 }
+	}
+})
+
+const addfruta = document.querySelectorAll('#produtos')
+const cestaDoCliente = document.querySelector("#cestaDoCliente")
+const Total = document.querySelector('#mostraTotalCompra')
+
+console.log(addfruta);
+console.log(cestaDoCliente);
+const cestaCliente = []
+
+addfruta.forEach(function(list){
+	list.addEventListener('click', function(elemento){
+	let listLiCliente = document.createElement('li');
+	console.log(list)
+	const pro = document.querySelector(`#produtos > li`)
+	const cesta = document.querySelector(`#cestaDoCliente > li`)
+	
+    
+	for(let frt of frutas){
+		for(listaF in frt){
+			if (listaF == 'preco'){
+				cestaDoCliente.appendChild(listLiCliente).set.Attribute('data-preco', frt[listaF])
+			} else{
+				cestaDoCliente.appendChild(listLiCliente).textContent = elemento.target.innerHTML;
+
+			}
+		}
+	}
+	function calculo (idProduto, resultado){
+		const preco = document.querySelectorAll(`#${idProduto}> li`);
+		const valorResultado = document.querySelector(`#${resultado}`);
+		let T = 0;
+		
+		for (let i of preco) {
+			T += Number(i.dataset.preco);
+			console.log(i.dataset.preco)
+		}
+		valorResultado.value = T
+	}
+	calculo('cestaDoCliente', 'mostraTotalCompra')
+    
+	
+})
+
+})
+	
+
+
+</script>
+<style type="text/css">
+	*{
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		font-family: Verdana;
+	}
+
+	.flex {
+		display: flex;
+	}
+
+	.flex-column {
+		flex-direction: column;
+	}
+
+	main {
+		width: 80%;
+		height: auto;
+		margin: 0 auto;
+		display: flex;
+		
+	}
+
+	ul {
+		list-style: none;
+	}
+
+	ul > li {
+		padding: 5px;
+		padding-left: 20px;
+		cursor: pointer;
+		font-size: 18px;
+		border: 1px solid #FFF3E0;
+		margin: 2px;
+
+	}
+
+	ul > li:hover {
+		background-color: #FFE0B2;
+		font-weight: bold;
+	}
+
+    h1 {
+    	padding: 20px;
+    	background-color: #558B2F;
+    	color: #fff;
+    	border-bottom: 2px solid #1B5E20;
+    }
+
+    h2 {
+        margin-top: 5px;	
+        background-color: #EF6C00;
+        border-bottom: 2px solid #BF360C;
+        padding: 2px;
+        padding-left: 20px;
+        color: #fff;
+    }
+
+    div {
+       	flex-direction: column;
+    	padding: 2px;
+    	width: 100%;
+    	height: auto;
+
+    }
+    .flex-row-end {
+    	flex-direction: row;
+    	justify-content: flex-end;
+    	margin-top: 10px;
+    }
+    .flex-row-end > span{
+    	width: 130px;
+    	height: auto;
+    	justify-content: flex-end;
+    	font-size: 28px;
+    	background-color: #558B2F ;
+    	color: #fff;
+    	padding: 2px;
+    	font-weight: bold;
+
+    }
+
+   .flex-row-end > #mostraTotalCompra {
+   	  font-size: 28px;
+   	  font-weight: bold;
+   } 
+
+</style>
+<body>
+	<main class="flex flex-column">
+		<h1>NOSSA KITANDA</h1>
+		<h2>Lista de Produtos</h2> 
+		<div id="content-produtos" class="flex" >
+			<ul id="produtos" ></ul>
+		</div>
+
+		<h2>Sua Cesta</h2> 
+		<div id="content-lista-produtos-cliente" class="flex">
+
+			<ul id="cestaDoCliente"></ul>
+
+			<div id="content-totalCompras" class="flex flex-row-end">
+				<span class="flex">
+					TOTAL
+				</span>
+				<input type="type" id="mostraTotalCompra" name="" disabled>
+			</div>
+		</div>
+
+	</main>	
+</body>
+</html>
